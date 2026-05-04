@@ -3,48 +3,495 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eu sou Mauros</title>
+    <title>Mariana & Lyon</title>
+    <meta
+      name="description"
+      content="Convite de casamento de Mariana e Lyon em Sao Luis, Maranhao."
+    >
     <style>
       :root {
-        color-scheme: dark;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #101418;
-        color: #f7f2e8;
+        color-scheme: light;
+        --ink: #27312d;
+        --muted: #68726d;
+        --ivory: #fffaf0;
+        --paper: #f8f1e4;
+        --sage: #5e7766;
+        --sage-dark: #354f41;
+        --gold: #b68a4a;
+        --tile: #49728a;
+        --line: rgba(39, 49, 45, 0.16);
+        font-family: Georgia, "Times New Roman", serif;
       }
 
       * {
         box-sizing: border-box;
       }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background:
-          radial-gradient(circle at 25% 20%, rgba(34, 197, 94, 0.22), transparent 34%),
-          radial-gradient(circle at 78% 74%, rgba(56, 189, 248, 0.18), transparent 32%),
-          #101418;
+      html {
+        scroll-behavior: smooth;
       }
 
-      main {
-        width: min(92vw, 900px);
+      body {
+        margin: 0;
+        background: var(--ivory);
+        color: var(--ink);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 92vh;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background: url("assets/wedding-hero.png") center/cover no-repeat;
+        transform: scale(1.02);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(180deg, rgba(20, 24, 21, 0.18), rgba(20, 24, 21, 0.22) 38%, rgba(255, 250, 240, 0.94) 100%),
+          radial-gradient(circle at center, rgba(255, 250, 240, 0.16), rgba(255, 250, 240, 0) 52%);
+      }
+
+      .nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        padding: 22px;
+        color: var(--ivory);
+        font: 700 12px/1.2 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .nav a {
+        text-decoration: none;
+        text-shadow: 0 1px 14px rgba(0, 0, 0, 0.42);
+      }
+
+      .hero-inner {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+        padding: 120px 0 9vh;
         text-align: center;
-        padding: 48px 24px;
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        font: 700 13px/1.3 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sage-dark);
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(48px, 10vw, 132px);
-        line-height: 0.95;
+        font-size: clamp(58px, 13vw, 168px);
+        line-height: 0.88;
         letter-spacing: 0;
-        text-transform: lowercase;
+        font-weight: 400;
+        color: #18231f;
+      }
+
+      .amp {
+        display: block;
+        margin: 2px 0;
+        color: var(--gold);
+        font-style: italic;
+        font-size: 0.48em;
+      }
+
+      .hero-copy {
+        max-width: 710px;
+        margin: 28px auto 0;
+        font-size: clamp(20px, 2.4vw, 30px);
+        line-height: 1.45;
+        color: #2c3934;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border: 1px solid rgba(53, 79, 65, 0.32);
+        border-radius: 4px;
+        background: rgba(255, 250, 240, 0.76);
+        color: var(--sage-dark);
+        text-decoration: none;
+        font: 700 12px/1 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        backdrop-filter: blur(10px);
+      }
+
+      .button.primary {
+        background: var(--sage-dark);
+        color: var(--ivory);
+        border-color: var(--sage-dark);
+      }
+
+      section {
+        padding: 82px 0;
+      }
+
+      .wrap {
+        width: min(1080px, 90vw);
+        margin: 0 auto;
+      }
+
+      .intro {
+        background: var(--ivory);
+      }
+
+      .intro .wrap {
+        display: grid;
+        grid-template-columns: 1fr minmax(260px, 390px);
+        gap: 56px;
+        align-items: center;
+      }
+
+      .section-label {
+        margin: 0 0 14px;
+        color: var(--gold);
+        font: 700 12px/1.3 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 62px);
+        line-height: 1;
+        font-weight: 400;
+      }
+
+      .lead {
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: clamp(18px, 2vw, 24px);
+        line-height: 1.62;
+      }
+
+      .monogram {
+        min-height: 360px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(135deg, rgba(182, 138, 74, 0.18), rgba(73, 114, 138, 0.08)),
+          var(--paper);
+      }
+
+      .monogram span {
+        color: var(--sage-dark);
+        font-size: clamp(80px, 12vw, 144px);
+        line-height: 1;
+      }
+
+      .details {
+        background: var(--paper);
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .detail {
+        min-height: 230px;
+        padding: 32px;
+        background: var(--ivory);
+      }
+
+      .detail h3 {
+        margin: 0 0 18px;
+        color: var(--sage-dark);
+        font: 700 13px/1.2 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .detail p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.38;
+      }
+
+      .place {
+        background: #fdf7ec;
+      }
+
+      .place .wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(260px, 1.05fr);
+        gap: 52px;
+        align-items: center;
+      }
+
+      .tile-panel {
+        min-height: 420px;
+        border: 1px solid rgba(73, 114, 138, 0.22);
+        background-color: #eef4f1;
+        background-image:
+          linear-gradient(45deg, rgba(73, 114, 138, 0.12) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(73, 114, 138, 0.12) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(182, 138, 74, 0.16) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(182, 138, 74, 0.16) 75%);
+        background-position: 0 0, 0 18px, 18px -18px, -18px 0;
+        background-size: 36px 36px;
+      }
+
+      .schedule {
+        background: var(--sage-dark);
+        color: var(--ivory);
+      }
+
+      .schedule .wrap {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 44px;
+        align-items: start;
+      }
+
+      .schedule .section-label,
+      .schedule .lead {
+        color: rgba(255, 250, 240, 0.76);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 18px;
+      }
+
+      .event {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 24px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(255, 250, 240, 0.22);
+      }
+
+      .event strong {
+        color: #f3d49b;
+        font: 700 15px/1.2 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .event p {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.4;
+      }
+
+      .rsvp {
+        text-align: center;
+        background: var(--ivory);
+      }
+
+      .rsvp .lead {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      footer {
+        padding: 34px 20px;
+        text-align: center;
+        background: #17241e;
+        color: rgba(255, 250, 240, 0.78);
+        font: 700 12px/1.4 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 820px) {
+        .nav {
+          gap: 14px;
+          padding: 16px 12px;
+          font-size: 10px;
+        }
+
+        .hero {
+          min-height: 86vh;
+        }
+
+        .intro .wrap,
+        .place .wrap,
+        .schedule .wrap,
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 64px 0;
+        }
+
+        .detail {
+          min-height: 180px;
+          padding: 28px;
+        }
+
+        .event {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
       }
     </style>
   </head>
   <body>
+    <header class="hero" id="inicio">
+      <nav class="nav" aria-label="Navegacao principal">
+        <a href="#convite">Convite</a>
+        <a href="#cerimonia">Cerimonia</a>
+        <a href="#presenca">Presenca</a>
+      </nav>
+
+      <div class="hero-inner">
+        <p class="kicker">Casamento em Sao Luis, Maranhao</p>
+        <h1>Mariana <span class="amp">&</span> Lyon</h1>
+        <p class="hero-copy">
+          Com alegria e fe, convidamos voce para celebrar nossa uniao diante de Deus.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#presenca">Confirmar presenca</a>
+          <a class="button" href="#cerimonia">Ver detalhes</a>
+        </div>
+      </div>
+    </header>
+
     <main>
-      <h1>eu sou mauros</h1>
+      <section class="intro" id="convite">
+        <div class="wrap">
+          <div>
+            <p class="section-label">Nosso convite</p>
+            <h2>Uma celebracao de amor, promessa e bencao.</h2>
+            <p class="lead">
+              Mariana e Lyon unem suas historias em uma cerimonia catolica,
+              cercados pela familia, pelos amigos e pela beleza de Sao Luis.
+            </p>
+          </div>
+          <div class="monogram" aria-label="Monograma de Mariana e Lyon">
+            <span>M&L</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="details" id="cerimonia">
+        <div class="wrap">
+          <p class="section-label">Cerimonia</p>
+          <div class="details-grid">
+            <article class="detail">
+              <h3>Data</h3>
+              <p>Em breve</p>
+            </article>
+            <article class="detail">
+              <h3>Local</h3>
+              <p>Igreja Catolica em Sao Luis, Maranhao</p>
+            </article>
+            <article class="detail">
+              <h3>Horario</h3>
+              <p>Em breve</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="place">
+        <div class="wrap">
+          <div class="tile-panel" aria-hidden="true"></div>
+          <div>
+            <p class="section-label">Sao Luis</p>
+            <h2>Um sim com luz, historia e fe.</h2>
+            <p class="lead">
+              A capital maranhense inspira o nosso dia com sua arquitetura,
+              seus azulejos e o encanto das celebracoes que atravessam geracoes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule">
+        <div class="wrap">
+          <div>
+            <p class="section-label">Programacao</p>
+            <h2>O dia do nosso casamento.</h2>
+            <p class="lead">
+              Os horarios completos serao compartilhados com os convidados assim
+              que a paroquia confirmar todos os detalhes.
+            </p>
+          </div>
+          <div class="timeline">
+            <div class="event">
+              <strong>Missa</strong>
+              <p>Cerimonia catolica com celebracao matrimonial.</p>
+            </div>
+            <div class="event">
+              <strong>Fotos</strong>
+              <p>Registros com familia e amigos ao final da cerimonia.</p>
+            </div>
+            <div class="event">
+              <strong>Recepcao</strong>
+              <p>Informacoes em breve.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvp" id="presenca">
+        <div class="wrap">
+          <p class="section-label">Confirmacao</p>
+          <h2>Sua presenca sera uma alegria.</h2>
+          <p class="lead">
+            A confirmacao de presenca sera aberta quando data, horario e local
+            definitivo estiverem disponiveis.
+          </p>
+          <div class="actions">
+            <span class="button primary">Confirmacao em breve</span>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>Mariana & Lyon - Sao Luis, Maranhao</footer>
   </body>
 </html>
